@@ -2,11 +2,22 @@
 name = "common_types"
 version = "0.1.0"
 edition = "2021"
+authors = ["{{authors}}"]
 
 [lib]
 crate-type = ["cdylib", "rlib"]
 
 [dependencies]
 serde = { version = "1.0.210", features = ["derive"] }
-wasm-bindgen = { version = "0.2.95", features = ["serde", "serde-serialize", "serde_json"] }
-web-sys = { version = "0.3.72", features = ["Document", "Element", "HtmlElement", "Node", "Window"] }
+wasm-bindgen = { version = "0.2.95", features = [
+	"serde",
+	"serde-serialize",
+	"serde_json",
+] }
+web-sys = { version = "0.3.72", features = [
+	"Document",
+	"Element",
+	"HtmlElement",
+	"Node",
+	"Window",
+] }
