@@ -1,0 +1,30 @@
+[package]
+name = "backend"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = { version = "0.7.7", features = ["macros", "http2"] }
+const_format = "0.2.33"
+dotenvy = "0.15.7"
+tokio = { version = "1.40.0", features = ["full"] }
+tower-http = { version = "0.6.1", features = ["fs", "cors", "trace"] }
+tracing = { version = "0.1.40", features = [
+	"max_level_trace",
+	"release_max_level_info",
+] }
+tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
+common_types = { path = "../common_types" }
+stytch = { version = "5.2.0", features = [
+	"reqwest-rustls-tls",
+], default-features = false }
+serde = { version = "1.0.210", features = ["derive"] }
+envconfig = "0.11.0"
+anyhow = "1.0.89"
+
+git-version = { version = "0.3.9", optional = true }
+
+
+[features]
+default = []
+git = ["git-version"]
